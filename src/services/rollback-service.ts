@@ -47,7 +47,7 @@ function validateRollbackRetryOptions(options: Required<RollbackRetryOptions>): 
   }
 
   if (options.maxRetryAttempts < 1) {
-    log("The 'maxRetryAttempts' rollback retry parameter cannot be less than 1.");
+    log("The 'maxRetryAttempts' rollback retry parameter cannot be less then 1.");
     return false;
   }
 

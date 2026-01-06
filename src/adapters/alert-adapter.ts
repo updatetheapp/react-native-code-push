@@ -49,7 +49,7 @@ function createAndroidAlertService(): AlertService {
   return {
     alert(title: string, message: string, buttons: DialogButton[]): void {
       if (buttons.length > MAX_ANDROID_BUTTONS) {
-        throw new Error(`Cannot show more than ${MAX_ANDROID_BUTTONS} buttons for Android dialog.`);
+        throw 'Can only show 2 buttons for Android dialog.';
       }
 
       const button1Text = buttons[0]?.text ?? null;

@@ -56,12 +56,15 @@ function createRequestHeaders(): Record<string, string> {
 
 /**
  * Serializes the request body to JSON if it's an object.
+ * If body is already a string, passes it through.
+ * If body is null/undefined, returns undefined.
  */
-function serializeRequestBody(body: unknown): string | undefined {
+function serializeRequestBody(body: unknown): string | null | undefined {
   if (body && typeof body === 'object') {
     return JSON.stringify(body);
   }
-  return undefined;
+  // Pass through strings or null/undefined as-is (matches original behavior)
+  return body as string | null | undefined;
 }
 
 // =============================================================================
@@ -118,7 +121,8 @@ async function request(
 
     actualCallback(null, httpResponse);
   } catch (error) {
-    actualCallback(error instanceof Error ? error : new Error(String(error)));
+    // Pass error directly to match original behavior
+    actualCallback(error as Error);
   }
 }
 

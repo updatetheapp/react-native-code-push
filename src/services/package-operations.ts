@@ -133,8 +133,8 @@ export function createPackageMixins(nativeModule: NativeCodePushModule): Package
           );
 
           if (reportStatusDownload) {
-            reportStatusDownload(self).catch((err: Error) => {
-              log(`Report download status failed: ${err.message}`);
+            reportStatusDownload(self).catch((err: unknown) => {
+              log(`Report download status failed: ${err}`);
             });
           }
 
