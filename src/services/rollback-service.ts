@@ -4,20 +4,20 @@
  * Handles rollback detection and retry logic for failed updates.
  * Determines whether a previously rolled-back update should be retried.
  *
- * @module rollbackService
+ * @module services/rollback-service
  */
 
-import { log } from './logging';
+import { log } from '../utils/logging';
 import {
   DEFAULT_ROLLBACK_RETRY_OPTIONS,
   isValidRollbackInfo,
-} from './types';
+} from '../types';
 import type {
   RemotePackage,
   SyncOptions,
   RollbackRetryOptions,
   NativeCodePushModule,
-} from './types';
+} from '../types';
 
 // =============================================================================
 // CONSTANTS

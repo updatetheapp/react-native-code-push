@@ -4,14 +4,14 @@
  * Handles checking for updates from the CodePush server and
  * retrieving update metadata from installed packages.
  *
- * @module updateService
+ * @module services/update-service
  */
 
 import { Platform } from 'react-native';
-import { log } from './logging';
-import { createPromisifiedSdk } from './sdkService';
-import { getConfiguration, createMergedConfiguration } from './configurationService';
-import type { PackageMixins } from './packageOperations';
+import { log } from '../utils/logging';
+import { createPromisifiedSdk } from './sdk-service';
+import { getConfiguration, createMergedConfiguration } from './configuration-service';
+import type { PackageMixins } from './package-operations';
 import type {
   NativeCodePushModule,
   HttpAdapter,
@@ -22,7 +22,7 @@ import type {
   UpdateInfo,
   UpdateState,
   HandleBinaryVersionMismatchCallback,
-} from './types';
+} from '../types';
 
 // =============================================================================
 // PRIVATE HELPERS

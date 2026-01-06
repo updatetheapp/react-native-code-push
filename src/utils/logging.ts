@@ -4,7 +4,7 @@
  * Provides a centralized logging utility for the CodePush library.
  * All log messages are prefixed with [CodePush] for easy identification.
  *
- * @module logging
+ * @module utils/logging
  */
 
 const LOG_PREFIX = '[CodePush]' as const;

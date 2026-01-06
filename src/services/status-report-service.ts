@@ -4,19 +4,19 @@
  * Handles reporting deployment status to the CodePush server.
  * Includes retry logic for failed reports when the app resumes.
  *
- * @module statusReportService
+ * @module services/status-report-service
  */
 
 import { AppState, AppStateStatus } from 'react-native';
-import { log } from './logging';
-import { createPromisifiedSdk } from './sdkService';
-import { getConfiguration } from './configurationService';
+import { log } from '../utils/logging';
+import { createPromisifiedSdk } from './sdk-service';
+import { getConfiguration } from './configuration-service';
 import type {
   StatusReport,
   NativeCodePushModule,
   HttpAdapter,
   CodePushConfiguration,
-} from './types';
+} from '../types';
 
 // =============================================================================
 // TYPES

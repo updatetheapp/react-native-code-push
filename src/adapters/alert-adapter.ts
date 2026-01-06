@@ -4,11 +4,11 @@
  * Provides a cross-platform alert service for displaying update dialogs.
  * Handles platform-specific differences between iOS and Android.
  *
- * @module alertAdapter
+ * @module adapters/alert-adapter
  */
 
 import { Alert as RNAlert, Platform, NativeModules } from 'react-native';
-import type { AlertService, DialogButton } from './types';
+import type { AlertService, DialogButton } from '../types';
 
 // =============================================================================
 // CONSTANTS

@@ -5,17 +5,17 @@
  * Implements the package mixin pattern to augment remote and local packages
  * with additional capabilities.
  *
- * @module packageOperations
+ * @module services/package-operations
  */
 
 import { NativeEventEmitter, NativeModule } from 'react-native';
-import { log } from './logging';
+import { log } from '../utils/logging';
 import type {
   NativeCodePushModule,
   LocalPackage,
   Package,
   DownloadProgressCallback,
-} from './types';
+} from '../types';
 
 // =============================================================================
 // TYPES

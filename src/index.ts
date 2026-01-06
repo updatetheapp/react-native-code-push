@@ -11,8 +11,8 @@
 // MAIN EXPORT
 // =============================================================================
 
-export { default } from './CodePush';
-export { CodePush } from './CodePush';
+export { default } from './core/code-push';
+export { CodePush } from './core/code-push';
 
 // =============================================================================
 // PUBLIC API
@@ -25,7 +25,7 @@ export {
   notifyApplicationReady,
   restartApp,
   sync,
-} from './CodePush';
+} from './core/code-push';
 
 // =============================================================================
 // ENUMS
@@ -99,9 +99,9 @@ export type {
 // UTILITIES (for advanced usage)
 // =============================================================================
 
-export { log } from './logging';
-export { httpClient } from './httpClient';
-export { Alert } from './alertAdapter';
+export { log } from './utils/logging';
+export { httpClient } from './utils/http-client';
+export { Alert } from './adapters/alert-adapter';
 
 // =============================================================================
 // TYPE GUARDS

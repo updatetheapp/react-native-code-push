@@ -4,7 +4,7 @@
  * Handles communication with the CodePush server through the acquisition SDK.
  * Provides promisified wrappers around the callback-based SDK methods.
  *
- * @module sdkService
+ * @module services/sdk-service
  */
 
 import { AcquisitionManager as Sdk } from 'code-push/script/acquisition-sdk';
@@ -14,7 +14,7 @@ import type {
   QueryPackage,
   UpdateInfo,
   Package,
-} from './types';
+} from '../types';
 
 // =============================================================================
 // TYPES

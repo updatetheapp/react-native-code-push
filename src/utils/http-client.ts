@@ -4,10 +4,10 @@
  * Provides a fetch-based HTTP adapter for communicating with the CodePush server.
  * Includes proper headers for plugin identification and version tracking.
  *
- * @module httpClient
+ * @module utils/http-client
  */
 
-import { HttpMethod, HttpAdapter, HttpRequestCallback, HttpResponse } from './types';
+import { HttpMethod, HttpAdapter, HttpRequestCallback, HttpResponse } from '../types';
 
 // =============================================================================
 // CONSTANTS

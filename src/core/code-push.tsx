@@ -4,7 +4,7 @@
  * The main entry point for the CodePush library.
  * Provides the CodePush HOC/decorator and all public API methods.
  *
- * @module CodePush
+ * @module core/code-push
  */
 
 import React, { Component, createRef, RefObject, ComponentType } from 'react';
@@ -12,14 +12,14 @@ import { AppState, AppStateStatus, NativeModules } from 'react-native';
 import hoistStatics from 'hoist-non-react-statics';
 import { AcquisitionManager as Sdk } from 'code-push/script/acquisition-sdk';
 
-import { log } from './logging';
-import { httpClient } from './httpClient';
-import { createPackageMixins, PackageMixins } from './packageOperations';
-import { setTestConfiguration, getConfiguration } from './configurationService';
-import { tryReportStatus } from './statusReportService';
-import { checkForUpdate as checkForUpdateService, getUpdateMetadata as getUpdateMetadataService, getCurrentPackage as getCurrentPackageService } from './updateService';
-import { sync as syncService } from './syncService';
-import { setSdkConstructor, getSdkConstructor } from './sdkService';
+import { log } from '../utils/logging';
+import { httpClient } from '../utils/http-client';
+import { createPackageMixins, PackageMixins } from '../services/package-operations';
+import { setTestConfiguration, getConfiguration } from '../services/configuration-service';
+import { tryReportStatus } from '../services/status-report-service';
+import { checkForUpdate as checkForUpdateService, getUpdateMetadata as getUpdateMetadataService, getCurrentPackage as getCurrentPackageService } from '../services/update-service';
+import { sync as syncService } from '../services/sync-service';
+import { setSdkConstructor, getSdkConstructor } from '../services/sdk-service';
 import {
   InstallMode,
   SyncStatus,
@@ -28,7 +28,7 @@ import {
   DeploymentStatus,
   DEFAULT_UPDATE_DIALOG,
   DEFAULT_ROLLBACK_RETRY_OPTIONS,
-} from './types';
+} from '../types';
 import type {
   CodePushOptions,
   SyncOptions,
@@ -40,7 +40,7 @@ import type {
   SyncStatusChangedCallback,
   DownloadProgressCallback,
   HandleBinaryVersionMismatchCallback,
-} from './types';
+} from '../types';
 
 // =============================================================================
 // NATIVE MODULE INITIALIZATION
@@ -426,4 +426,4 @@ export {
   DEFAULT_UPDATE_DIALOG,
   DEFAULT_ROLLBACK_RETRY_OPTIONS,
 };
-export * from './types';
+export * from '../types';

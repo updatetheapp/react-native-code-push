@@ -6,20 +6,20 @@
  * - Showing update dialogs
  * - Downloading and installing updates
  *
- * @module syncService
+ * @module services/sync-service
  */
 
-import { log } from './logging';
-import { Alert } from './alertAdapter';
-import { checkForUpdate, getCurrentPackage } from './updateService';
-import { shouldUpdateBeIgnored } from './rollbackService';
+import { log } from '../utils/logging';
+import { Alert } from '../adapters/alert-adapter';
+import { checkForUpdate, getCurrentPackage } from './update-service';
+import { shouldUpdateBeIgnored } from './rollback-service';
 import {
   SyncStatus,
   InstallMode,
   DEFAULT_SYNC_OPTIONS,
   DEFAULT_UPDATE_DIALOG,
   isUpdateDialog,
-} from './types';
+} from '../types';
 import type {
   SyncOptions,
   UpdateDialog,
@@ -30,8 +30,8 @@ import type {
   DownloadProgressCallback,
   HandleBinaryVersionMismatchCallback,
   DialogButton,
-} from './types';
-import type { PackageMixins } from './packageOperations';
+} from '../types';
+import type { PackageMixins } from './package-operations';
 
 // =============================================================================
 // STATE

@@ -4,10 +4,10 @@
  * Manages CodePush configuration retrieval and caching.
  * Provides a single source of truth for configuration across the app.
  *
- * @module configurationService
+ * @module services/configuration-service
  */
 
-import type { CodePushConfiguration, NativeCodePushModule } from './types';
+import type { CodePushConfiguration, NativeCodePushModule } from '../types';
 
 // =============================================================================
 // STATE
