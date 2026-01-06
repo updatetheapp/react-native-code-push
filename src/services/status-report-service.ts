@@ -76,7 +76,7 @@ async function reportBinaryUpdate(
   log(`Reporting binary update (${statusReport.appVersion})`);
 
   if (!config.deploymentKey) {
-    throw new Error('Deployment key is missing');
+    throw new Error('Deployment key is missed');
   }
 
   const sdk = createPromisifiedSdk(httpAdapter, config);

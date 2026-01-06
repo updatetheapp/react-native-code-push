@@ -205,7 +205,7 @@ function appendReleaseDescription(
   remotePackage: RemotePackage
 ): string {
   if (dialogConfig.appendReleaseDescription && remotePackage.description) {
-    return `${message}${dialogConfig.descriptionPrefix}${remotePackage.description}`;
+    return `${message}${dialogConfig.descriptionPrefix} ${remotePackage.description}`;
   }
   return message;
 }
