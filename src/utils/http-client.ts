@@ -9,6 +9,14 @@
 
 import { HttpMethod, HttpAdapter, HttpRequestCallback, HttpResponse } from '../types';
 
+// Load package.json for version information (matches original behavior)
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const packageJson = require('../../package.json') as {
+  name: string;
+  version: string;
+  dependencies: Record<string, string>;
+};
+
 // =============================================================================
 // CONSTANTS
 // =============================================================================
@@ -24,11 +32,6 @@ const HTTP_METHOD_NAMES: readonly string[] = [
   'CONNECT',
   'PATCH',
 ] as const;
-
-// Plugin information (loaded at runtime to avoid circular dependencies)
-const PLUGIN_NAME = 'react-native-code-push';
-const PLUGIN_VERSION = '9.0.1';
-const SDK_VERSION = '4.2.3';
 
 // =============================================================================
 // PRIVATE HELPERS
@@ -48,9 +51,9 @@ function createRequestHeaders(): Record<string, string> {
   return {
     Accept: 'application/json',
     'Content-Type': 'application/json',
-    'X-CodePush-Plugin-Name': PLUGIN_NAME,
-    'X-CodePush-Plugin-Version': PLUGIN_VERSION,
-    'X-CodePush-SDK-Version': SDK_VERSION,
+    'X-CodePush-Plugin-Name': packageJson.name,
+    'X-CodePush-Plugin-Version': packageJson.version,
+    'X-CodePush-SDK-Version': packageJson.dependencies['code-push'] ?? '',
   };
 }
 
